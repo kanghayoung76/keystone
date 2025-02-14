@@ -79,13 +79,11 @@ static int __init keystone_dev_init(void)
 {
   int  ret;
 
-
   ret = misc_register(&keystone_dev);
   if (ret < 0)
   {
     pr_err("keystone_enclave: misc_register() failed\n");
   }
-
   keystone_dev.this_device->coherent_dma_mask = DMA_BIT_MASK(32);
 
   pr_info("keystone_enclave: " DRV_DESCRIPTION " v" DRV_VERSION "\n");
